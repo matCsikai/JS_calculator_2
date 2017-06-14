@@ -15,7 +15,9 @@ $(document).ready(function(){
     totaldiv.text("0");
     
     $("#numbers a").not("#clear,#clearall").click(function(){
-    $("#numbers!!!!!").html() // make it!
-});
+        number = number.concat($(this).html());
+        totaldiv.text(number);
+        testNumLength(number); 
+    });
     
 });
