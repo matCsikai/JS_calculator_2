@@ -1,14 +1,16 @@
-ody, div, a {
+body, div, a {
     padding:0;
     margin:0;
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 #calculator {
-	background-color: #999;
+	background-color: #ffeb99;
+	background: linear-gradient(#ffeb99, #ffbf80);
+	border-radius: 3px;
+	box-shadow: 4px 4px #ffb84d, 0px 10px 15px rgba(0, 0, 0, 0.2);
 	width: 310px;
 	height: 460px;
-	border: 3px black solid;
 	margin: 10px auto;
 	padding: 5px;
 	border-radius: 10px;
@@ -20,9 +22,10 @@ ody, div, a {
     margin:auto;
     background-color:white;
     margin-bottom: 5px;
+	margin-top: 5px;
     text-align: right;
     font-size: 60px;
-    padding: 0 5px;
+	border-radius: 10px;
 }
 
 #numbers, #operators {
@@ -35,13 +38,13 @@ ody, div, a {
 	height: 45px;
 	float: left;
 	text-decoration: none;
-	color: black;
+	color: white;
 	text-align: center;
 	font-size: 39px;
 	padding: 2px;
 	margin: 5px 6px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
-	background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+	background-color: #2e2e1f;
+	box-shadow: 2px 2px #000000, 0px 10px 15px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
 }
 
@@ -51,13 +54,21 @@ ody, div, a {
 	height: 50px;
 	float: left;
 	text-decoration: none;
-	color: black;
+	color: white;
 	text-align: center;
 	font-size: 32pt;
 	padding: 10px;
 	margin: 5px 15px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
-	background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+	background-color: #c68c53;
+	box-shadow: 2px 2px #996633, 0px 10px 15px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
+}
+#numbers a:active {
+	box-shadow: 0px 0px #996633;
+	top: 4px;
+}
+#operators a:active {
+	box-shadow: 0px 0px #000000;
+	top: 4px;
 }
 
