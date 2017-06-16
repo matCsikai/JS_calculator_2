@@ -1,12 +1,17 @@
 $(document).ready(function(){
 	var testNumLength = function(number) {
-        if (number.length > 9) {
-            totaldiv.text(number.substr(number.length-9,9));
-            if (number.length > 15) {
-                number = "";
-                totaldiv.text("Err");
-            }
-        } 
+		var isDecimal = number.indexOf(".");
+		if ((isDecimal !== -1) && (number.length > 9)){
+            totaldiv.text(number.substr(0,9));
+			if(number.slice(0, isDecimal) > 8){
+				number = "";
+				totaldiv.text("Err");
+			}
+		} else if ((number.indexOf(".") === -1) && (number.length > 9)){
+			number = "";
+			totaldiv.text("Err");
+		}
+         
     };
 	var number = "";
     var newnumber = "";
@@ -37,13 +42,13 @@ $(document).ready(function(){
     
     $("#equals").click(function(){
 		if (operator === "+"){
-			number = (parseInt(number, 10) + parseInt(newnumber,10)).toString(10);
+			number = (parseFloat(number) + parseFloat(newnumber)).toString(10);
 		} else if (operator === "-"){
-			number = (parseInt(newnumber, 10) - parseInt(number,10)).toString(10);
+			number = (parseFloat(newnumber) - parseFloat(number)).toString(10);
 		} else if (operator === "/"){
-			number = (parseInt(newnumber, 10) / parseInt(number,10)).toString(10);
+			number = (parseFloat(newnumber) / parseFloat(number)).toString(10);
 		} else if (operator === "*"){
-			number = (parseInt(newnumber, 10) * parseInt(number,10)).toString(10);
+			number = (parseFloat(newnumber) * parseFloat(number)).toString(10);
 		}
 		totaldiv.text(number);
 		testNumLength(number);
