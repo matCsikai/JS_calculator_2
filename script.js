@@ -19,7 +19,7 @@ $(document).ready(function(){
     var totaldiv = $("#total");
     totaldiv.text("0");
         
-    $("#numbers a").not("#clear,#clearall").click(function(){
+    $("#numbers a").not("#clear").click(function(){
 		number += $(this).text();
 		totaldiv.text(number);
 		testNumLength(number);
@@ -32,13 +32,10 @@ $(document).ready(function(){
 		totaldiv.text("0");
 	});
     
-    $("#clear,#clearall").click(function(){
+    $("#clear").click(function(){
 		number = "";
 		totaldiv.text("0");
-		if ($(this).attr("id") === "clearall") {
-			newnumber = "";
-		}
-    });
+		});
     
     $("#equals").click(function(){
 		if (operator === "+"){
